@@ -1,22 +1,26 @@
-import { Page } from '@playwright/test';
+import { Locator, Page } from '@playwright/test';
 
 export class SearchPage {
-  constructor(private page: Page) {}
+  searchInputField: Locator;
+  searchInputFill: Locator;
+  searchInputPressEnter: Locator;
 
-  searchInputField = this.page
-    .locator('div')
-    .filter({ hasText: 'Zacznij pisać aby zobaczyć produkty, których szukasz' })
-    .getByPlaceholder('Wyszukaj produkty');
+  constructor(private page: Page) {
+    this.searchInputField = this.page
+      .locator('div')
+      .filter({ hasText: 'Zacznij pisać aby zobaczyć produkty, których szukasz' })
+      .getByPlaceholder('Wyszukaj produkty');
 
-  searchInputFill = this.page
-    .locator('div')
-    .filter({ hasText: 'Zacznij pisać aby zobaczyć produkty, których szukasz' })
-    .getByPlaceholder('Wyszukaj produkty');
+    this.searchInputFill = this.page
+      .locator('div')
+      .filter({ hasText: 'Zacznij pisać aby zobaczyć produkty, których szukasz' })
+      .getByPlaceholder('Wyszukaj produkty');
 
-  searchInputPressEnter = this.page
-    .locator('div')
-    .filter({ hasText: 'Zacznij pisać aby zobaczyć produkty, których szukasz' })
-    .getByPlaceholder('Wyszukaj produkty');
+    this.searchInputPressEnter = this.page
+      .locator('div')
+      .filter({ hasText: 'Zacznij pisać aby zobaczyć produkty, których szukasz' })
+      .getByPlaceholder('Wyszukaj produkty');
+  }
 
   async clickSearchInputField() {
     await this.searchInputField.click();

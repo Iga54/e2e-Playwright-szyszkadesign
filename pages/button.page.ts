@@ -1,8 +1,10 @@
-import { Page } from '@playwright/test';
+import { Locator, Page } from '@playwright/test';
 
 export class ButtonPage {
-  constructor(private page: Page) {}
-  searchButton = this.page.getByRole('link', { name: 'Szukaj' });
+  searchButton: Locator;
+  constructor(private page: Page) {
+    this.searchButton = this.page.getByRole('link', { name: 'Szukaj' });
+  }
 
   async clickSearchButton() {
     await this.searchButton.click();
