@@ -30,7 +30,7 @@ Page Object Model was used within project (for files: button.spec.ts and search.
 The project was written using TypeScript. Main frameworks and their versions are described below:
 
 - "@playwright/test" - framework for test automation for web applications which allows running tests using different browsers (in case of given project - Chromium were exploited)
-  In addition, Playwright ensures a support for parallel tests, creenshots, video recording and elements inspection
+  In addition, Playwright ensures a support for parallel tests, screenshots, video recording and elements inspection
 
 - "@types/node" - set of type definitions for Node.js, designed for use with TypeScript. These types enable better autocompletion, type checking, and documentation in the IDE
 
